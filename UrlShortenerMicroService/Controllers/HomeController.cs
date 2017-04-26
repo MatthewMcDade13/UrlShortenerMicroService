@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace UrlShortenerMicroService.Controllers
 {
     public class HomeController : Controller
-    {
+    {        
         public IActionResult Index()
         {
             return View();
