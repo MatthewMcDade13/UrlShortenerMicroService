@@ -8,6 +8,10 @@ namespace UrlShortenerMicroService.Models
 {
     public interface IUrlRepository
     {
-        ICollection<Url> GetAllUrls();
+        IEnumerable<Url> GetAllUrls();
+
+        void AddUrl(Url url);
+
+        Task<bool> SaveChangesAsync();
     }
 }

@@ -10,27 +10,25 @@ namespace UrlShortenerMicroService.Controllers
     [Route("api/short")]
     public class UrlController : Controller
     {
-        private UrlContext context;
+        private IUrlRepository repo;
 
-        public UrlController(UrlContext context)
+        public UrlController(IUrlRepository repo)
         {
-            this.context = context;
+            this.repo = repo;
         }
 
-
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        //GET /api/short/url(must be string)
+        [HttpGet("{url:alpha}")]
+        public string Get(string url)
         {
-
-            return new string[] { "value1", "value2" };
+            return "string";
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/short/5
+        [HttpGet("{id:long}")]
+        public string Get(long id)
         {
-            return "value";
+            return "number";
         }
     }
 }

@@ -36,6 +36,8 @@ namespace UrlShortenerMicroService
 
             services.AddDbContext<UrlContext>();
 
+            services.AddScoped<IUrlRepository, UrlRepository>();
+
             services.AddMvc()
                 .AddJsonOptions(options =>
                 {
