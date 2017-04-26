@@ -37,7 +37,20 @@ namespace UrlShortenerMicroService
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
+            app.UseStaticFiles();
+
+            app.UseMvc( config =>
+            {
+                config.MapRoute(
+                    "Default",
+                    "{controller}/{action}/{id?}",
+                    new { controller = "Home", action = "Index" });
+
+                config.MapRoute(
+                    "Error",
+                    "api/{*url}",
+                    new { controller = "Error", action = "Http404" });
+            });
         }
     }
 }

@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UrlShortenerMicroService.Controllers
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+    [Route("api/short")]
+    public class UrlController : Controller
     {
         // GET api/values
         [HttpGet]
