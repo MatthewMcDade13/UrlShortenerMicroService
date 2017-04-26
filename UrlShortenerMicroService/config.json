@@ -1,0 +1,5 @@
+﻿{
+  "Data": {
+    "UrlContextConnection" : "Server=(localdb)\\ProjectsV13;Database=UrlShortenerDb;MultipleActiveResultSets=true;"
+  }
+}

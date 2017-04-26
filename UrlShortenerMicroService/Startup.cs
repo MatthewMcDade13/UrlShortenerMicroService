@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
+using UrlShortenerMicroService.Models;
 
 namespace UrlShortenerMicroService
 {
@@ -17,6 +18,7 @@ namespace UrlShortenerMicroService
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("config.json")
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
@@ -29,6 +31,11 @@ namespace UrlShortenerMicroService
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+
+            services.AddSingleton(Configuration);
+
+            services.AddDbContext<UrlContext>();
+
             services.AddMvc()
                 .AddJsonOptions(options =>
                 {
@@ -41,6 +48,8 @@ namespace UrlShortenerMicroService
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
 
