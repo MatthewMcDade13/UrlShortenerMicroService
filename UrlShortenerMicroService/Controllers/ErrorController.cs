@@ -8,5 +8,10 @@ namespace UrlShortenerMicroService.Controllers
         {
             return View();
         }
+
+        public IActionResult NotFoundInDatabase()
+        {
+            return View();
+        }
     }
 }

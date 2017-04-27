@@ -1,18 +1,10 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>How To</title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/css/site.css" rel="stylesheet" />
-</head>
-<body>
-
-    <div id="wrapper">
+﻿@{
+    ViewBag.Title = "How To";
+}
         <h1>Url Shortener Microservice</h1>
         <div class="jumbotron">
             <div>
-                <h2>Example Usage:</h2>
+                <h2>Example Creation Usage:</h2>
 
                 <p>Url to be shortened <strong><em>must</em></strong> be a query string, preceeded by '?'</p>
 
@@ -24,11 +16,24 @@
             <div>
                 <h2>Example Output:</h2>
 
-                <code>{ oldUrl = "http://www.google.com", NewUrl = $"http://thisdomain/10007" }</code>
+                <code>{ oldUrl = "http://www.google.com", NewUrl = "http://thisdomain/10007" }</code>
+            </div>  
+            <br />
+            <div>
+                <h2>Usage:</h2>
+                <code>http://thisdomain/10007</code>
             </div>
-        </div>        
-    </div>
+            <br />
+            <div>
+                <h2>Will Redirect To:</h2>
+                <code>http://www.google.com</code>
+            </div>
+        </div>
 
-
-</body>
-</html>
+        <footer>
+            <strong>-Matthew McDade</strong>
+            <a href="https://www.linkedin.com/in/matthew-mcdade-903325138/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/MatthewMcDade13"><i class="fa fa-github"></i></a>
+            <a href="https://www.freecodecamp.com/matthewmcdade13"><i class="fa fa-free-code-camp"></i></a>
+            <a href="http://codepen.io/MatthewMcDade13/"><i class="fa fa-codepen"></i></a>
+        </footer>

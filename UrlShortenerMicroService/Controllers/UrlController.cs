@@ -60,7 +60,14 @@ namespace UrlShortenerMicroService.Controllers
             var urlList = repo.GetAllUrls()
                 .Where(model => model.Id == id).ToList();
 
-            Response.Redirect(urlList[0].Name);
+            if (urlList.Count > 0)
+            {
+                Response.Redirect(urlList[0].Name);
+            }
+            else
+            {
+                Response.Redirect("/Error/NotFoundInDatabase");
+            }            
         }
     }
 }
