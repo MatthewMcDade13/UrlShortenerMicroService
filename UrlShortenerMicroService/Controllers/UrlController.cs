@@ -38,7 +38,7 @@ namespace UrlShortenerMicroService.Controllers
                     
                     if (await repo.SaveChangesAsync())
                     {
-                        return Json(new { OldUrl = url, NewUrl = $"http://localhost:49250/api/short/{newEntry.Id}" });
+                        return Json(new { OldUrl = url, NewUrl = $"http://localhost:49250/{newEntry.Id}" });
                     }
                     else
                     {
