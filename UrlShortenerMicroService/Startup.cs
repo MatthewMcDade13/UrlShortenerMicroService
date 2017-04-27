@@ -56,7 +56,7 @@ namespace UrlShortenerMicroService
             app.UseStaticFiles();
 
             app.UseMvc( config =>
-            {
+            { 
                 config.MapRoute(
                     "Default",
                     "{controller}/{action}/{id?}",
@@ -64,7 +64,7 @@ namespace UrlShortenerMicroService
 
                 config.MapRoute(
                     "Error",
-                    "api/{*url}",
+                    "{*url}",
                     new { controller = "Error", action = "Http404" });
             });
         }
