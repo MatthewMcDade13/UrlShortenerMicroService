@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using UrlShortenerMicroService.Models;
 using System.Text.RegularExpressions;
-using System.Diagnostics;
 
 namespace UrlShortenerMicroService.Controllers
 {
@@ -34,7 +32,7 @@ namespace UrlShortenerMicroService.Controllers
                 {
                     Url newEntry = new Url { Name = url };
 
-                    repo.AddUrl(newEntry);
+                        repo.AddUrl(newEntry);
                     
                     if (await repo.SaveChangesAsync())
                     {
@@ -43,12 +41,16 @@ namespace UrlShortenerMicroService.Controllers
                     else
                     {
                         return Json(new { Error = "An error occured. Item was not saved to Database." });
+                        
                     }
                     
                 }
             }
 
-            return Json(new { Error = "Url Format is incorrect, please use a real site." });
+            return Json(
+                new {
+                Error = "Url Format is incorrect, please use a real site.",
+                ProperFormat = "?http(s)://website.com"});
         }
 
         // GET /5
