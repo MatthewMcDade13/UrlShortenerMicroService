@@ -11,7 +11,6 @@ namespace UrlShortenerMicroService.Controllers
     {
         private IUrlRepository repo;
         private Regex regex = new Regex("https?://[A-Za-z]+[.][A-Za-z]+");
-        private Random random = new Random();
 
         public UrlController(IUrlRepository repo)
         {
@@ -57,10 +56,9 @@ namespace UrlShortenerMicroService.Controllers
         [HttpGet("{id:long}")]
         public void RedirectUser(long id)
         {
-            var urlList = repo.GetAllUrls()
-                .Where(model => model.Id == id).ToList();
+            var urlList = repo.GetUrlById(id);
 
-            if (urlList.Count > 0)
+            if (urlList.Count() > 0)
             {
                 Response.Redirect(urlList[0].Name);
             }

@@ -7,6 +7,8 @@ namespace UrlShortenerMicroService.Models
     {
         IEnumerable<Url> GetAllUrls();
 
+        List<Url> GetUrlById(long id);
+
         void AddUrl(Url url);
 
         Task<bool> SaveChangesAsync();

@@ -18,6 +18,13 @@ namespace UrlShortenerMicroService.Models
             return context.Urls.ToList();
         }
 
+        public List<Url> GetUrlById(long id)
+        {
+            return GetAllUrls()
+                .Where(model => model.Id == id)
+                .ToList();
+        }
+
         public void AddUrl(Url url)
         {
             context.Add(url);
