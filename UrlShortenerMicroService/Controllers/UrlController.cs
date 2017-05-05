@@ -35,7 +35,7 @@ namespace UrlShortenerMicroService.Controllers
                     
                     if (await repo.SaveChangesAsync())
                     {
-                        return Json(new { OldUrl = url, NewUrl = $"http://localhost:49250/{newEntry.Id}" });
+                        return Json(new { OldUrl = url, NewUrl = $"https://infinite-caverns-82170.herokuapp.com//{newEntry.Id}" });
                     }
                     else
                     {
