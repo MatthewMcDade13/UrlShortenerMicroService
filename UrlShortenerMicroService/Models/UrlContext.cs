@@ -18,7 +18,7 @@ namespace UrlShortenerMicroService.Models
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer(config["Data:UrlContextConnection"]);
+            optionsBuilder.UseNpgsql(config["Data:UrlContextConnection"]);
         }
     }
 }

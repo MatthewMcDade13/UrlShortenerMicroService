@@ -8,14 +8,14 @@ using UrlShortenerMicroService.Models;
 namespace UrlShortenerMicroService.Migrations
 {
     [DbContext(typeof(UrlContext))]
-    [Migration("20170426061322_initdb")]
-    partial class initdb
+    [Migration("20170505052341_PostGresTestMigration")]
+    partial class PostGresTestMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.1")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
+                .HasAnnotation("ProductVersion", "1.1.1");
 
             modelBuilder.Entity("UrlShortenerMicroService.Models.Url", b =>
                 {

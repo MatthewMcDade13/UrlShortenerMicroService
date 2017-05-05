@@ -1,5 +1,5 @@
 ﻿{
   "Data": {
-    "UrlContextConnection" : "Server=(localdb)\\ProjectsV13;Database=UrlShortenerDb;MultipleActiveResultSets=true;"
+    "UrlContextConnection": "Database=d6oppi0dhvbmu5;host=ec2-23-21-220-188.compute-1.amazonaws.com;port=5432;user id=bzzkjlzvpjqcof;password=4c28b694da38212da73122bab14544f9eabca6fb1e50c33e8615812902d5a132;sslmode=Require;Trust Server Certificate=true"
   }
 }
